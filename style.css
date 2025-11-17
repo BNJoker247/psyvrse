@@ -1,0 +1,53 @@
+/* General Setup */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+/* Background */
+.background {
+  background: url('https://media.discordapp.net/attachments/1416204063606964405/1440100803397288159/Screenshot_2025-11-10_163336.png?ex=691cede3&is=691b9c63&hm=0d6461b2d6c878978193749ed1e3116ca27b090f5c9e853066c353997ba6e610&=&format=webp&quality=lossless') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Content Card */
+.content {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+/* Buttons / Links */
+.links a {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #d2691e, #ff4500, #ffb347); /* caramel brown → sunset orange */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  transform: scale(1.05);
+}
