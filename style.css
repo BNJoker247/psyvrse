@@ -16,15 +16,25 @@ body, html {
   z-index: -1;
 }
 
-/* Content Card */
-.content {
-  max-width: 600px;
-  margin: 50px auto;
-  text-align: center;
+/* Container for both cards */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap; /* stacks cards on mobile */
+  padding: 50px 20px;
+}
+
+/* Cards */
+.card {
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 20px;
   color: #fff;
+  flex: 1 1 300px; /* min width 300px, flex-grow */
+  max-width: 500px;
+  box-sizing: border-box;
 }
 
 /* Profile Image */
@@ -34,20 +44,33 @@ body, html {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
+  display: block;
+  margin: 0 auto 20px;
 }
 
-/* Buttons / Links */
+/* Links / Buttons */
 .links a {
   display: block;
   margin: 10px auto;
   padding: 10px 20px;
-  background: linear-gradient(90deg, #d2691e, #ff4500, #ffb347); /* caramel brown → sunset orange */
+  background: linear-gradient(90deg, #d2691e, #ff4500, #ffb347);
   color: #fff;
   text-decoration: none;
   border-radius: 10px;
   transition: 0.3s;
+  text-align: center;
 }
 
 .links a:hover {
   transform: scale(1.05);
+}
+
+/* Description Card Styling */
+.description-card h2 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.description-card ul {
+  padding-left: 20px;
 }
