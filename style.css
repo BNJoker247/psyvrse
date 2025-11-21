@@ -1,85 +1,115 @@
-  /* General Setup */
+/* Reset */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  height: 100%;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-/* Background */
+/* Neon gradient animated bg blur */
 .background {
-  background: url('https://media.discordapp.net/attachments/1416204063606964405/1440812424461684928/image.png?ex=691f84a2&is=691e3322&hm=08bb154b675db4f3f6a6709522971f9ba4ca29a3f4cb90e82ecb1ab8d2a25f82&=&format=webp&quality=lossless') no-repeat center center fixed;
-  background-size: cover;
-  position: fixed;
   width: 100%;
   height: 100%;
+  position: fixed;
   z-index: -1;
+  background: radial-gradient(circle at 20% 20%, #ff0080, transparent),
+              radial-gradient(circle at 80% 80%, #00eaff, transparent),
+              radial-gradient(circle at 50% 50%, #7a00ff, transparent);
+  filter: blur(120px);
+  animation: pulse 12s infinite alternate;
 }
 
-/* Container for both cards */
+/* Smooth shifting glow effect */
+@keyframes pulse {
+  0% { filter: blur(110px); opacity: 0.6; }
+  100% { filter: blur(160px); opacity: 1; }
+}
+
+/* Layout */
 .container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 30px;
-  flex-wrap: wrap; /* stacks cards on mobile */
   padding: 50px 20px;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* Cards */
-.card {
-  background: rgba(0, 0, 0, 0.1);
-  padding: 30px;
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.07);
   border-radius: 20px;
-  color: #000000;
-  flex: 1 1 300px; /* min width 300px, flex-grow */
-  max-width: 500px;
-  box-sizing: border-box;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(255, 0, 200, 0.2);
 }
 
 /* Profile Image */
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  object-fit: cover;
   border: 3px solid #fff;
   display: block;
   margin: 0 auto 20px;
 }
 
-/* Links and buttons */
+/* Profile name */
+.name {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #ff00f5;
+}
+
+/* Links */
 .links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: 0.3s;
-    margin: 10px auto;
-    font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+
+  background: linear-gradient(90deg,
+      #ff0080,
+      #ff6a00,
+      #ffe600
+  );
+
+  transition: 0.25s;
+  box-shadow: 0 0 10px rgba(255, 0, 150, 0.4);
 }
 
 .links a:hover {
-    transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255, 0, 200, 0.9);
 }
 
-/* Icon styling */
+/* Link Icons */
 .links img {
-    width: 30px;
-    height: 30px;
-    border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
 }
 
-/* Description Card Styling */
+/* Right Card Headers */
 .description-card h2 {
-  margin-top: 0;
   color: #fff;
+  border-left: 4px solid #ff00f5;
+  padding-left: 10px;
+  margin-top: 25px;
+  text-shadow: 0 0 12px #ff00f5;
 }
 
+/* List spacing */
 .description-card ul {
-  padding-left: 20px;
+  margin-left: 15px;
 }
