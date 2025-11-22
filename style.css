@@ -31,11 +31,13 @@ body, html {
   background: rgba(0, 0, 0, 0.1);
   padding: 30px;
   border-radius: 20px;
-  color: #000000;
-  flex: 1 1 300px; /* min width 300px, flex-grow */
+  color: #ff00ff; /* <-- your new text color */
+  flex: 1 1 300px;
   max-width: 500px;
   box-sizing: border-box;
+  font-weight: bold;
 }
+
 
 /* Profile Image */
 .profile-img {
@@ -43,7 +45,7 @@ body, html {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #fff;
+  border: 3px solid #000000;
   display: block;
   margin: 0 auto 20px;
 }
@@ -54,7 +56,7 @@ body, html {
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
-    background: linear-gradient(90deg, #ffff00, #ff8000, #ff0000);
+    background: linear-gradient(90deg, #0000ff, #00ffff, #ffffff);
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
